@@ -17,7 +17,7 @@ struct MultiThreadItemView: View {
                 .padding()
 
             Button("Start Background Task") {
-
+                runBackgroundTask()
             }
             .padding()
             .background(Color.green.opacity(0.3))

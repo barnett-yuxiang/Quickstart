@@ -15,7 +15,7 @@ struct Item: Identifiable {
 
 struct ContentView: View {
     private let columns = [
-        GridItem(.flexible()), GridItem(.flexible()),
+        GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),
     ]
 
     private let items: [Item] = [
@@ -24,26 +24,45 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            item.view
-                                .navigationTitle(item.title)
-                                .navigationBarTitleDisplayMode(.inline)
-                        } label: {
-                            Text(item.title)
-                                .font(.headline)
-                                .frame(maxWidth: .infinity, minHeight: 60)
-                                .background(Color.blue.opacity(0.2))
-                                .foregroundColor(.black)
-                                .cornerRadius(8)
+            VStack(spacing: 0) {
+                // Fixed title header
+                Text("Quickstart Items")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 20)
+                    .background(Color.blue.opacity(0.1))
+                    .overlay(
+                        Rectangle()
+                            .frame(height: 1)
+                            .foregroundColor(Color.gray.opacity(0.3)),
+                        alignment: .bottom
+                    )
+
+                // Scrollable grid content
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(items) { item in
+                            NavigationLink {
+                                item.view
+                                    .navigationTitle(item.title)
+                                    .navigationBarTitleDisplayMode(.inline)
+                            } label: {
+                                Text(item.title)
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                                    .multilineTextAlignment(.center)
+                                    .frame(maxWidth: .infinity, minHeight: 45)
+                                    .background(Color.blue.opacity(0.2))
+                                    .foregroundColor(.black)
+                                    .cornerRadius(6)
+                            }
                         }
                     }
+                    .padding()
                 }
-                .padding()
             }
-            .navigationTitle("Quickstart Items")
+            .navigationBarHidden(true)
         }
     }
 }
