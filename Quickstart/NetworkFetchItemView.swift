@@ -35,6 +35,7 @@ struct NetworkFetchItemView: View {
             Spacer()
         }
         .padding(24)
+        // Swift Concurrency
         .task { await fetchPage() }  // Automatically triggered when view appears
     }
 
