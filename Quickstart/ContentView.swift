@@ -21,7 +21,8 @@ struct ContentView: View {
     private let items: [Item] = [
         Item(title: "Multi-Thread", view: AnyView(MultiThreadItemView())),
         Item(title: "Image Load", view: AnyView(ImageItemView())),
-        Item(title: "Feed List", view: AnyView(FeedListItemView()))
+        Item(title: "Feed List", view: AnyView(FeedListItemView())),
+        Item(title: "Network Fetch",view: AnyView(NetworkFetchItemView()))
     ]
 
     var body: some View {
