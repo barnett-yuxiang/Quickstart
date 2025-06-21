@@ -19,7 +19,8 @@ struct ContentView: View {
     ]
 
     private let items: [Item] = [
-        Item(title: "Multi-Thread", view: AnyView(MultiThreadItemView()))
+        Item(title: "Multi-Thread", view: AnyView(MultiThreadItemView())),
+        Item(title: "Image Load", view: AnyView(ImageItemView()))
     ]
 
     var body: some View {
