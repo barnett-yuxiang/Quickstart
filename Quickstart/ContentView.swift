@@ -22,7 +22,8 @@ struct ContentView: View {
         Item(title: "Multi-Thread", view: AnyView(MultiThreadItemView())),
         Item(title: "Image Load", view: AnyView(ImageItemView())),
         Item(title: "Feed List", view: AnyView(FeedListItemView())),
-        Item(title: "Network Fetch",view: AnyView(NetworkFetchItemView()))
+        Item(title: "Network Fetch",view: AnyView(NetworkFetchItemView())),
+        Item(title: "SnapKit Demo", view: AnyView(SnapKitDemoView()))
     ]
 
     var body: some View {
