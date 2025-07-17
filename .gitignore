@@ -1,3 +1,10 @@
+# Xcode
 .DS_Store
 .qodo
-Quickstart.xcodeproj
+
+# CocoaPods - 这是你现在真正需要的
+Pods/
+*.xcworkspace
+
+# 用户文件（Xcode自动生成）
+xcuserdata/
